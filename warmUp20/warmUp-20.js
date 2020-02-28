@@ -4,3 +4,13 @@
 //
 //
 // Note : you can`t use any built-in functions .
+
+function reverseStr ( string ) {
+    var arrayOfStrings = string.split (' ');
+    string="";
+    for ( var i = arrayOfStrings.length-1; i > 0; i--){
+        string = string . concat (arrayOfStrings[i] , " ")
+    }
+    string=string. concat ( arrayOfStrings [0] )
+    return string;
+}
