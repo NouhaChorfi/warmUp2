@@ -16,3 +16,34 @@
 // Constraints:
 // 1 <= text.length <= 10^4
 // text consists of lower case English letters only.
+
+function balloonInstances ( string ) {
+
+    var ballonSplit='balloon'.split('');
+    var splittedString=string.split('');
+    var counter=0
+    var numberOfOccurance=0;
+
+    
+    for ( var i=0 ; i<ballonSplit.length ; i++){
+        
+        for ( var j=0 ; j<splittedString.length ; j++){
+            if( ballonSplit[i] === splittedString[j] && counter<7){
+                counter+=1
+                splittedString.splice(j,1);
+                console.log("ee"+counter)
+                if(j<splittedString.length){
+                    j=j-1
+                }
+            }
+             else if( counter === 7 ){
+                 counter=0
+                numberOfOccurance+=1
+                console.log("zz"+numberOfOccurance)
+            }
+        }
+       
+    }
+
+   return numberOfOccurance
+}
